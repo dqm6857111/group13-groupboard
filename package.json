@@ -1,0 +1,14 @@
+{
+  "name": "group13-groupboard",
+  "version": "1.0.0",
+  "description": "Lightweight Kanban board",
+  "main": "src/tasks.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}
