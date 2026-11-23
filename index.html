@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GroupBoard — Student team Kanban</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GroupBoard</p>
+        <h1>Team board</h1>
+      </div>
+      <p class="hint">Local-only · no account · data stays in this browser</p>
+    </header>
+
+    <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel">
+          <h2 id="form-title">Add a task</h2>
+          <form id="task-form">
+            <label>
+              Title
+              <input id="task-title" name="title" maxlength="120" required autocomplete="off" />
+            </label>
+            <label data-feature="i2">
+              Assignee
+              <select id="task-assignee" name="assignee">
+                <option value="">Unassigned</option>
+              </select>
+            </label>
+            <label data-feature="i2">
+              Due date
+              <input id="task-due" name="dueDate" type="date" />
+            </label>
+            <div class="form-actions">
+              <button type="submit" id="task-submit">Add task</button>
+              <button type="button" id="task-cancel" class="secondary" hidden>Cancel</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel" data-feature="i2">
+          <h2>Members</h2>
+          <form id="member-form" class="member-form">
+            <label>
+              Name
+              <input id="member-name" name="member" maxlength="40" autocomplete="off" />
+            </label>
+            <button type="submit" class="secondary">Add member</button>
+          </form>
+          <ul id="member-list" class="member-list"></ul>
+        </section>
+
+        <section class="panel help">
+          <h2>How to use</h2>
+          <p>Add a task, assign it to a member and set an optional due date. Use the card buttons to move work across the board.</p>
+          <p>Overdue dates are red; dates within 48 hours are amber. Reloading keeps the board in this browser.</p>
+        </section>
+      </aside>
+
+      <section id="board" class="board" aria-label="Kanban board"></section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
