@@ -31,7 +31,7 @@ const els = {
   memberList: $('#member-list'),
 };
 
-const FEATURES = { iteration2: false };
+const FEATURES = { iteration2: true };
 
 const loaded = loadBoard();
 let board = loaded.board;
